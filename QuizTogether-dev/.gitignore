@@ -1,0 +1,6 @@
+client/app/src/main/gen/
+.idea
+*.iws
+*.iml
+*.ipr
+

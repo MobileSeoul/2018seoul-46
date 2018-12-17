@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- subscribe fragment-->
+    <dimen name="questionGageHeight">40dp</dimen>
+    <dimen name="questionGageTopMargin">8dp</dimen>
+    <dimen name="questionGageTextLMargin">17dp</dimen>
+    <dimen name="questionGageTextRMargin">17dp</dimen>
+    <dimen name="quizingBottomMargin">38dp</dimen>
+</resources>

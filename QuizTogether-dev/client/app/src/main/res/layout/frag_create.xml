@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="16dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/roomInfoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/room_info"
+            android:textColor="@color/sub_title"
+            android:textSize="14dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/roomInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_room_info"
+            android:elevation="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/roomInfoTitle">
+
+            <LinearLayout
+                android:id="@+id/llRoomInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btMoney"
+                        android:layout_width="46dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="19dp"
+                        android:background="@drawable/rect_back_white_radius_14"
+                        android:gravity="center"
+                        android:text="@string/prize"
+                        android:textAlignment="center"
+                        android:textColor="@color/darker_gray"
+                        android:textSize="14dp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/btGoods"
+                        android:layout_width="46dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="9dp"
+                        android:background="@drawable/rect_back_white_radius_14"
+                        android:gravity="center"
+                        android:text="@string/goods"
+                        android:textAlignment="center"
+                        android:textColor="@color/darker_gray"
+                        android:textSize="14dp"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/etPrize"
+                        android:layout_width="110dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="19dp"
+                        android:background="@android:color/transparent"
+                        android:hint="총 상금 "
+                        android:inputType="number"
+                        android:textColor="@color/navy"
+                        android:textSize="14dp"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/etGiftDescription"
+                        android:layout_width="110dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="19dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/goods"
+                        android:textColor="@color/navy"
+                        android:textSize="14dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="80dp"
+                        android:gravity="start"
+                        android:textColor="@color/navy"
+                        android:textSize="14dp"
+                        tools:text="아이디" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etTtile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/room_title"
+                    android:inputType="textShortMessage"
+                    android:maxLength="20"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/inner_separator" />
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/room_description"
+                    android:inputType="textMultiLine"
+                    android:lines="2"
+                    android:maxLength="50"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/tvDatePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14.1dp"
+                    android:layout_marginTop="30dp"
+                    android:hint="시간 설정하기"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/darker_gray"
+                    android:visibility="gone"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/ic_dummy"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="5dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llWinnerMsg"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:background="@drawable/background_winner_msg"
+            app:layout_constraintTop_toBottomOf="@id/roomInfo">
+
+            <EditText
+                android:id="@+id/etWinnerMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/winner_message"
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:maxLength="60"
+                android:padding="12dp"
+                android:scrollHorizontally="false"
+                android:textAlignment="center"
+                android:textColorHint="@color/darker_gray"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separatorLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/separator"
+            app:layout_constraintTop_toBottomOf="@+id/llWinnerMsg" />
+
+        <TextView
+            android:id="@+id/tvQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/quiz"
+            android:textColor="@color/sub_title"
+            android:textSize="14dp"
+            app:layout_constraintTop_toBottomOf="@id/separatorLine" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvQuizNumbers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvQuiz">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/quizViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="283dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/rvQuizNumbers" />
+
+        <com.shuhart.bubblepagerindicator.BubblePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:bpi_fillColor="@color/cyan"
+            app:bpi_marginBetweenCircles="6dp"
+            app:bpi_onSurfaceCount="3"
+            app:bpi_pageColor="@color/indicator_sub_circle"
+            app:bpi_radius="3.5dp"
+            app:bpi_risingCount="2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quizViewPager" />
+
+        <LinearLayout
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@+id/quizViewPager">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="96dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/cancel"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:visibility="gone"
+                android:textColor="@color/navy" />
+
+            <TextView
+                android:id="@+id/reservation"
+                android:layout_width="96dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/reservation"
+                android:gravity="center"
+                android:text="@string/reservation"
+                android:textColor="@color/navy" />
+
+            <TextView
+                android:id="@+id/open"
+                android:layout_width="96dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/open"
+                android:gravity="center"
+                android:text="@string/open"
+                android:textColor="@color/yellow" />
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="96dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/save"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            app:layout_constraintTop_toBottomOf="@+id/llBottom" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

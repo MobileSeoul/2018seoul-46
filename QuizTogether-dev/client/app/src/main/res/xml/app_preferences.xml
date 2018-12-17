@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="setting">
+        <PreferenceScreen
+            android:key="key1"
+            android:title="setting1"
+            android:summary="this is setting1"/>
+        <PreferenceScreen
+            android:key="key2"
+            android:title="Init data"
+            android:summary="init app first launch data"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

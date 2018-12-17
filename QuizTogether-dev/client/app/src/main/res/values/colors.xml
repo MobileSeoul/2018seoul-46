@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#008ba0</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="yellow">#fafd47</color>
+    <color name="navy">#1a273d</color>
+    <color name="cyan">#0e8199</color>
+    <color name="light_gray">#e0e1e2</color>
+    <color name="gray">#d0d3d7</color>
+    <color name="darker_gray">#a2a8b0</color>
+
+    <color name="sub_title">#5b6473</color>
+    <color name="separator">#cccdd1</color>
+    <color name="inner_separator">#e7e9eb</color>
+    <color name="indicator_sub_circle">#e2e3e3</color>
+
+    <!-- for subscribe-->
+    <color name="rcpbColorDefault">#e6e8ea</color>
+    <color name="rcpbColorSelect">#1a273d</color>
+    <color name="rcpbColorBorder">#e7e8eb</color>
+    <color name="rcpbColorO">#97cdd7</color>
+    <color name="rcpbColorX">#ffa0a0</color>
+
+    <color name="defaultBackground">#f8f7f6</color>
+
+    <color name="deepBlue">#0e8199</color>
+    <color name="soDeepBlue">#065a6f</color>
+    <color name="shallowDark">#1a273d</color>
+    <color name="black">#000000</color>
+
+    <color name="speciYellow">#fafd47</color>
+
+    <color name="redInDialog">#ff2c2c</color>
+
+</resources>

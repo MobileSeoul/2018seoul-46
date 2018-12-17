@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.user.UserFollowerMapper">
+      <sql id="UserFollowerColumns">
+          user_follower.seq
+        , user_follower.user_id
+        , user_follower.follower
+        ,	user_follower.created_time
+      </sql>
+
+  <select id="selectFollowerListByUserId" parameterType="map" resultType="UserFollower">
+    SELECT
+    /* user_follower.selectFollowerListByUserId */
+       <include refid="UserFollowerColumns" />
+    FROM
+      user_follower
+    WHERE
+      user_id = #{userId}
+  </select>
+
+  <insert id="insertFollower" parameterType="map">
+    INSERT INTO /* user_follower.insertFollower */
+        user_follower(user_id, follower, created_time)
+    value(#{userId}, #{follower}, NOW(3))
+  </insert>
+
+  <delete id="deleteFollower" parameterType="map">
+    DELETE FROM /* user_follower.deleteFollower */
+      user_follower
+    WHERE
+      user_id = #{userId}
+      AND follower = #{follower}
+  </delete>
+
+
+
+</mapper>

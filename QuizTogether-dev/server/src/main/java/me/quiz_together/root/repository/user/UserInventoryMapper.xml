@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.user.UserInventoryMapper">
+
+  <sql id="UserInventoryColumns">
+          user_inventory.user_id
+        ,	user_inventory.heart_count
+  </sql>
+
+  <select id="selectUserInventoryByUserId" parameterType="map" resultType="UserInventory">
+    SELECT
+    /* user_inventory.selectUserInventoryByUserId */
+    <include refid="UserInventoryColumns" />
+    FROM
+    user_inventory
+    WHERE
+    user_id = #{userId}
+  </select>
+
+  <update id="updateUserHeartCount" parameterType="map">
+    UPDATE /* user_inventory.updateUserHeartCount */
+        user_inventory
+      SET
+        heart_count = heart_count + #{heartCount}
+        , updated_time = NOW(3)
+      WHERE
+        user_id = #{userId}
+  </update>
+
+  <insert id="insertUserInventory" parameterType="map">
+       INSERT INTO /* user_inventory.insertUserInventory */
+        user_inventory(user_id, heart_count, created_time, updated_time)
+        value(#{userId}, 1, NOW(3), NOW(3))
+  </insert>
+
+
+
+</mapper>

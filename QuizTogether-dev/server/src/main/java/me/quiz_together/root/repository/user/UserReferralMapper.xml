@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.user.UserReferralMapper">
+
+  <insert id="insertReferralUser" parameterType="map">
+       INSERT INTO /* user_referral.insertReferralUser */
+        user_referral(user_id, referral_user, created_time)
+        value(#{userId}, #{referralUser}, NOW(3))
+  </insert>
+
+
+
+</mapper>

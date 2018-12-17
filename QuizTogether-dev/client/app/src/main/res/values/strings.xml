@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">QX : 함께하는 퀴즈쇼</string>
+    <string name="room_info">방 정보</string>
+    <string name="prize">상금</string>
+    <string name="goods">상품</string>
+    <string name="room_title">방 제목을 적어주세요~</string>
+    <string name="room_description">방 설명이 필요하시다면 입력해주세요~</string>
+
+    <string name="winner_message">퀴즈 우승자에게 전할 메세지를 적어주세요\n(축하 메세지, 상금이나 상품 지급 방법 등)</string>
+    <string name="hint_example1">보기1</string>
+    <string name="hint_example2">보기2</string>
+    <string name="hint_example3">보기3</string>
+    <string name="hint_question">문제 질문을 작성해주세요~</string>
+    <string name="quiz">문제</string>
+    <string name="reservation">예약</string>
+    <string name="open">개설</string>
+    <string name="save">저장</string>
+    <string name="open_quiz">퀴즈 개설</string>
+    <string name="cancel">취소</string>
+
+
+    <!--for fb login-->
+    <string name="facebook_app_id">1339286162872749</string>
+    <string name="fb_login_protocol_scheme">fb1339286162872749</string>
+
+</resources>

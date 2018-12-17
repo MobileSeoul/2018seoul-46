@@ -1,0 +1,71 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://seose11.iptime.org:13306/quizTogether?zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8&mysqlEncoding=utf8&connectTimeout=5000&socketTimeout=5000&useServerPrepStmts=true&cachePrepStmts=true&useSSL=false
+    username: root
+    password: qqqq
+    hikari:
+      auto-commit: true
+      pool-name: quiz_together
+      register-mbeans: true
+      minimum-idle: 5
+      maximum-pool-size: 5
+      connection-test-query: select 1
+      connection-timeout: 3200
+      validation-timeout: 3200
+  servlet:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 10Mb
+  redis:
+    host: seose11.iptime.org
+    port: 6379
+    database: 0
+    password: qqqq
+
+
+fcm:
+  apiKey: AIzaSyDmtRKxoWiKuDqTVFTLHYYIrZSw8CPyYYM
+logging:
+  config: classpath:local/log4j2.xml
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/quizTogether?zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8&mysqlEncoding=utf8&connectTimeout=5000&socketTimeout=5000&useServerPrepStmts=true&cachePrepStmts=true&useSSL=false
+    username: root
+    password: qqqq
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: qqqq
+
+fcm:
+  apiKey: AIzaSyDmtRKxoWiKuDqTVFTLHYYIrZSw8CPyYYM
+logging:
+  config: classpath:dev/log4j2.xml
+---
+
+spring:
+  profiles: real
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/quizTogether?zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8&mysqlEncoding=utf8&connectTimeout=5000&socketTimeout=5000&useServerPrepStmts=true&cachePrepStmts=true&useSSL=false
+    username: root
+    password: qqqq
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password: qqqq
+
+fcm:
+  apiKey: AIzaSyDmtRKxoWiKuDqTVFTLHYYIrZSw8CPyYYM
+server:
+  port: 8081
+logging:
+  config: classpath:real/log4j2.xml

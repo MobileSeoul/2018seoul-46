@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.broadcast.BroadcastMapper">
+  <sql id="BroadcastColumns">
+          broadcast.id
+        , broadcast.user_id
+        , broadcast.title
+        , broadcast.description
+        , broadcast.broadcast_status
+        , broadcast.prize
+        , broadcast.gift_description
+        , broadcast.gift_type
+        , broadcast.winner_message
+        , broadcast.code
+        , broadcast.is_public
+        , broadcast.question_count
+        ,	broadcast.created_time
+        ,	broadcast.updated_time
+        , broadcast.scheduled_time
+      </sql>
+
+  <select id="selectBroadcastById" parameterType="map" resultType="Broadcast">
+    SELECT
+    /* broadcast.selectBroadcastById */
+    <include refid="BroadcastColumns" />
+    FROM
+    broadcast
+    WHERE
+    id = #{broadcastId}
+  </select>
+
+  <select id="selectPagingBroadcastList" parameterType="map" resultType="Broadcast">
+    SELECT
+    /* broadcast.selectPagingBroadcastList */
+    <include refid="BroadcastColumns" />
+    FROM
+    broadcast
+    <where>
+      broadcast_status != 600
+      <if test="next > 0">
+        AND id &lt; #{next}
+      </if>
+      <if test="userId > 0">
+        AND user_id != #{userId}
+      </if>
+    </where>
+    ORDER BY
+    scheduled_time
+    LIMIT
+    #{limit}
+  </select>
+
+  <select id="selectMyBroadcastList" parameterType="map" resultType="Broadcast">
+    SELECT
+    /* broadcast.selectMyBroadcastList */
+    <include refid="BroadcastColumns" />
+    FROM
+    broadcast
+    WHERE
+      user_id = #{userId}
+      AND broadcast_status != 600
+    ORDER BY
+    scheduled_time
+  </select>
+
+  <select id="selectPreparedBroadcastByUserId" parameterType="map" resultType="int">
+    SELECT
+    /* broadcast.selectPreparedBroadcastByUserId */
+    count(*)
+    FROM
+    broadcast
+    WHERE
+    user_id = #{userId}
+    AND broadcast_status != 600
+  </select>
+
+  <insert id="insertBroadcast" useGeneratedKeys="true" keyProperty="id" parameterType="map">
+       INSERT INTO /* broadcast.insertBroadcast */
+        broadcast(
+          user_id
+          , title
+          , description
+          , broadcast_status
+          , prize
+          , gift_description
+          , gift_type
+          , winner_message
+          , code
+          , is_public
+          , question_count
+          , scheduled_time
+          ,	created_time
+          ,	updated_time
+          )
+        VALUES (
+          #{userId}
+          , #{title}
+          , #{description}
+          , #{broadcastStatus}
+          , #{prize}
+          , #{giftDescription}
+          , #{giftType}
+          , #{winnerMessage}
+          , #{code}
+          , #{isPublic}
+          , #{questionCount}
+          , #{scheduledTime, jdbcType=TIMESTAMP}
+          ,	NOW(3)
+          , NOW(3)
+          )
+  </insert>
+
+  <update id="updateBroadcast" parameterType="map">
+    UPDATE /* broadcast.updateBroadcast */
+      broadcast
+    SET
+      , title = #{title}
+      , description = #{title}
+      , prize = #{prize}
+      , gift_description = #{giftDescription}
+      , gift_type = #{giftType}
+      , winner_message = #{winnerMessage}
+      , code = #{code}
+      , is_public = #{isPublic}
+      , question_count = #{questionCount}
+      ,	updated_time = NOW()
+      , scheduled_time = #{scheduledTime}
+    WHERE
+        id = #{id}
+  </update>
+
+  <delete id="deleteBroadcastById" parameterType="map">
+    DELETE FROM/* broadcast.deleteBroadcastById */
+      broadcast
+    WHERE
+        id = #{broadcastId}
+  </delete>
+
+  <update id="updateBroadcastStatus" parameterType="map">
+    UPDATE /* broadcast.updateBroadcastStatus */
+      broadcast
+    SET
+      broadcast_status = #{broadcastStatus}
+      ,	updated_time = NOW()
+    WHERE
+        id = #{broadcastId}
+  </update>
+
+
+
+</mapper>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_deep_blue"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:lineSpacingExtra="3dp"
+            android:gravity="center"
+            android:textColor="#212544"
+            android:textSize="14dp"
+            android:text="함께 만드는 퀴즈쇼" />
+
+        <ImageView
+            android:src="@drawable/login_logo"
+            android:id="@+id/textView3"
+            android:layout_width="105dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="11dp"
+            />
+
+        <EditText
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:id="@+id/etId"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/back_white_border_for_edittext"
+            android:ems="10"
+            android:hint="닉네임을 입력해주세요"
+            android:inputType="textPersonName"
+            android:lineSpacingExtra="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text=""
+            android:textColor="#212544"
+            android:textSize="14dp" />
+
+        <Button
+            android:layout_marginTop="14dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/btStart"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:textColor="#065a6f"
+            android:lineSpacingExtra="10dp"
+            android:textSize="14dp"
+            android:background="@drawable/back_yellow_border_for_layout"
+            android:text="로그인" />
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btFb"
+                android:layout_margin="15dp"
+                android:src="@drawable/login_facebook"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+                android:id="@+id/btNaver"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <ImageView
+                android:id="@+id/tmptmpTEST"
+                android:layout_margin="15dp"
+                android:src="@drawable/login_kakao"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <ImageView
+                android:layout_margin="15dp"
+                android:src="@drawable/login_google"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+        </LinearLayout>
+
+        <com.facebook.login.widget.LoginButton
+            android:visibility="invisible"
+            android:id="@+id/lbtFb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+
+
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

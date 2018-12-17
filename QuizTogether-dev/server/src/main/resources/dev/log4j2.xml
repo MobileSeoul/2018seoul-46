@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+  <properties>
+    <property name="log.dir">/home/sse/woojin/logs/quizTogether/</property>
+    <property name="log.appender">LogFileAppender</property>
+    <property name="log.level">DEBUG</property>
+    <property name="log.includeLocation">true</property>
+    <property name="env">dev</property>
+  </properties>
+
+  <Appenders>
+    <Console name="CONSOLE" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss:SSS} [%-5p] [%t] [%X{tid}] [%c{1}:%L] %m %n"/>
+    </Console>
+
+  <RollingRandomAccessFile name="LogFileAppender" fileName="${log.dir}api-${env}.log"
+                           filePattern="${log.dir}api-${env}.log.%d{yyyy-MM-dd-HH}-%i"
+                           immediateFlush="true" append="true" >
+    <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss:SSS} [%-5p] [%t] [%X{tid}] [%c{1}:%L] %m %n"/>
+    <Policies>
+      <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+      <SizeBasedTriggeringPolicy size="1GB"/>
+    </Policies>
+    <DefaultRolloverStrategy max="72"/>
+  </RollingRandomAccessFile>
+  </Appenders>
+
+  <Loggers>
+    <Logger name="springfox.documentation" level="INFO"/>
+    <Logger name="org.springframework" level="INFO"/>
+    <Logger name="com.zaxxer.hikari" level="INFO"/>
+    <Logger name="org.springframework.data.redis" level="INFO"/>
+
+    <Root level="${log.level}" includeLocation="${log.includeLocation}">
+      <AppenderRef ref="${log.appender}" />
+    </Root>
+  </Loggers>
+</Configuration>

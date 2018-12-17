@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_bot_nav_1"
+        android:checked="true"
+        android:icon="@drawable/vtic_home"
+        android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_bot_nav_2"
+        android:checked="false"
+        android:icon="@drawable/icc_add_new"
+        android:title=""
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_bot_nav_3"
+        android:checked="false"
+        android:icon="@drawable/vtic_profile"
+        android:title=""
+        app:showAsAction="ifRoom" />
+</menu>

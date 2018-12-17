@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.question.QuestionMapper">
+  <sql id="QuestionColumns">
+          question.id
+        , question.user_id
+        , question.broadcast_id
+        , question.step
+        , question.question_prop
+        , question.answer_no
+        ,	question.created_time
+        ,	question.updated_time
+        , question.category
+      </sql>
+
+  <select id="selectQuestionListByBroadcastId" parameterType="map" resultType="Question">
+    SELECT
+    /* question.selectQuestionListByBroadcastId */
+    <include refid="QuestionColumns" />
+    FROM
+    question
+    WHERE
+    broadcast_id = #{broadcastId}
+  </select>
+
+  <select id="selectQuestionByQuestionId" parameterType="map" resultType="Question">
+    SELECT
+    /* question.selectQuestionByQuestionId */
+    <include refid="QuestionColumns" />
+    FROM
+    question
+    WHERE
+    id = #{questionId}
+  </select>
+
+  <select id="selectQuestionByBroadcastIdAndStep" parameterType="map" resultType="Question">
+    SELECT
+    /* question.selectQuestionByBroadcastIdAndStep */
+    <include refid="QuestionColumns" />
+    FROM
+    question
+    WHERE
+    broadcast_id = #{broadcastId}
+    AND step = #{step}
+  </select>
+
+  <insert id="insertQuestionList" parameterType="map">
+    INSERT INTO /* question.insertQuestionList */
+    question(user_id, broadcast_id, step, question_prop, answer_no, created_time, updated_time, category)
+    VALUES
+    <foreach collection="list" item="question" separator=",">
+      (#{question.userId}, #{question.broadcastId}, #{question.step}, #{question.questionProp},
+      #{question.answerNo}, NOW(3), NOW(3), #{question.category})
+    </foreach>
+  </insert>
+
+  <update id="updateQuestionListByQuestionId" parameterType="map">
+    <foreach collection="list" item="question" index="index" separator=";">
+      UPDATE /* question.updateQuestionListByQuestionId */
+      question
+      SET
+      , step = #{question.step}
+      , question_prop = #{question.questionProp}
+      , answer_no = #{question.answerNo}
+      , category = #{question.category}
+      ,	updated_time = NOW()
+      WHERE
+      question_id = #{question.questionId}
+    </foreach>
+  </update>
+
+</mapper>

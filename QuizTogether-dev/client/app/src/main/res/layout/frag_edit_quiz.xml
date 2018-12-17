@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="295dp"
+    android:background="@drawable/background_quiz_info"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etQuizTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_question"
+            android:inputType="text"
+            android:lines="3"
+            android:maxLength="50"
+            android:maxLines="3"
+            android:minLines="3"
+            android:textColor="@color/darker_gray"
+            android:textSize="14dp" />
+
+        <ImageButton
+            android:id="@+id/ibOne"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/ic_auto"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/ibTwo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_delete"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rect_back_white_radius_20"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/option1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_example1"
+            android:inputType="text"
+            android:textColor="@color/darker_gray"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cbAnswer1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/checkbox_for_answer"
+            android:button="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/rect_back_white_radius_20"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/option2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_example2"
+            android:inputType="text"
+            android:textColor="@color/darker_gray"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cbAnswer2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/checkbox_for_answer"
+            android:button="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/rect_back_white_radius_20"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/option3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_example3"
+            android:inputType="text"
+            android:textColor="@color/darker_gray"
+            android:textSize="14dp" />
+
+        <CheckBox
+            android:id="@+id/cbAnswer3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/checkbox_for_answer"
+            android:button="@null" />
+    </LinearLayout>
+</LinearLayout>

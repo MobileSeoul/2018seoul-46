@@ -1,0 +1,416 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="missingPrefix"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f7f6"
+    >
+
+
+    <LinearLayout
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:padding="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/back_white_border_for_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#1a273d"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="12dp"
+            android:gravity="center_horizontal" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/questionGageHeight">
+
+            <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:id="@+id/rcpbExp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rcBackgroundPadding="1dp"
+                app:rcSecondaryProgressColor="#ffffff" />
+
+
+            <ImageView
+                android:id="@+id/tvCnt1"
+                android:layout_width="11dp"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:lineSpacingExtra="12dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icc_life"
+                android:textColor="#a5a7b3"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="12dp"
+                android:text="60%"
+                android:textColor="#fafd47"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <!--<com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar-->
+        <!--android:id="@+id/rcpbExp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/questionGageHeight"-->
+        <!--app:rcBackgroundPadding="1dp"-->
+        <!--app:rcSecondaryProgressColor="#ffffff" />-->
+
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#1a273d"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    android:text="팔로잉" />
+
+                <TextView
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#1a273d"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    android:text="37" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#1a273d"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    tools:text="팔로워" />
+
+                <TextView
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#1a273d"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    tools:text="1.4k" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="11dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#1a273d"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="10dp"
+                android:text="코인" />
+
+            <EditText
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:hint="금액을 입력하세요"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:gravity="center"
+                    android:background="@drawable/bg_for_coin"
+                    android:layout_width="46dp"
+                    android:layout_height="27dp"
+                    android:textSize="14dp"
+                    android:textColor="#d0d3d7"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    android:text="인출" />
+
+                <TextView
+                    android:gravity="center"
+                    android:background="@drawable/bg_for_coin"
+                    android:layout_width="46dp"
+                    android:layout_height="27dp"
+                    android:layout_marginRight="9dp"
+                    android:textSize="14dp"
+                    android:textColor="#d0d3d7"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    android:text="충전" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#a2a8b0"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="10dp"
+                android:text="휴대폰을 인증하면 하트가 뿜뿜~"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/icc_fwdbt"
+                    android:layout_width="16dp"
+                    android:layout_height="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#a2a8b0"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="10dp"
+                android:text="이메일을 인증하면 하트가 뿜뿜~" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/icc_fwdbt"
+                    android:layout_width="16dp"
+                    android:layout_height="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#1a273d"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="10dp"
+                android:text="내 추천 코드" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/icc_for_coin_cpy"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_marginRight="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#1a273d"
+                    android:letterSpacing="-0.02"
+                    android:lineSpacingExtra="10dp"
+                    android:text="1EON3US" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:background="#e8e8ec"
+            android:layout_height="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#1a273d"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="10dp"
+                android:text="추천인 코드입력" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/icc_fwdbt"
+                    android:layout_width="16dp"
+                    android:layout_height="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/icc_profile"
+            app:civ_border_width="5dp"
+            app:civ_border_color="#ffffff" />
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+
+</RelativeLayout>

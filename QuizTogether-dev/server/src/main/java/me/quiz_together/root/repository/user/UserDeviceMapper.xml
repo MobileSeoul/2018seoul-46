@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.quiz_together.root.repository.user.UserDeviceMapper">
+      <sql id="UserDeviceColumns">
+          user_device.id
+        , user_device.user_id
+        , user_device.push_token
+        ,	user_device.created_time
+        ,	user_device.updated_time
+      </sql>
+
+  <select id="selectUserDeviceByUserId" parameterType="map" resultType="UserDevice">
+    SELECT
+    /* user_device.selectUserDeviceByUserId */
+       <include refid="UserDeviceColumns" />
+    FROM
+        user_device
+    WHERE
+        user_id = #{userId}
+  </select>
+
+
+
+  <insert id="insertUserDevice" parameterType="map">
+       INSERT INTO /* user_device.insertUserDevice */
+        user_device(user_id, push_token, created_time, updated_time)
+        value(#{userId}, #{pushToken}, NOW(), NOW())
+  </insert>
+
+
+
+</mapper>
